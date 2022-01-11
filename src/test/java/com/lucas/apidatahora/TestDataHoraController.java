@@ -10,8 +10,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.web.server.LocalServerPort;
 
 import static io.restassured.RestAssured.when;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class TestDataHoraController {
@@ -57,7 +56,7 @@ public class TestDataHoraController {
 
         assertEquals(HttpStatus.SC_BAD_REQUEST, response.getStatusCode());
 
-        assertNotNull(json.get("message"));
+        assertNull(json.get("message"));
     }
 
 
